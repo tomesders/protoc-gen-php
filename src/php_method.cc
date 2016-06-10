@@ -40,6 +40,7 @@ void PHPFileGenerator::PrintSetterGetterMethods(const Descriptor& message) {
     printer_.Print("\n");
 
     printer_.Print(variables,
+      "public function set`oneof_capitalized_name`($value, $case) { $this->`oneof_case` = $case; $this->`oneof_name` = $value; }\n"
       "public function clear`oneof_capitalized_name`() { $this->`oneof_case` = `oneof_default`; $this->`oneof_name` = null; }\n"
       "public function has`oneof_capitalized_name`()`bool_return_type` { return $this->`oneof_case` !== `oneof_default`; }\n"
       "public function get`oneof_capitalized_name`() { if($this->`oneof_case` !== `oneof_default`) return $this->`oneof_name`; else return null; }\n"
